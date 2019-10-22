@@ -1,0 +1,7 @@
+{
+  "name": "Offgrid",
+  "id": "768105866232801306",
+  "api": "1.0.0",
+  "main": "build/main.js",
+  "ui": "build/ui.html"
+}

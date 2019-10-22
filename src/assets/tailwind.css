@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.7')
+      format('woff2'),
+    url('https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.7')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7')
+      format('woff2'),
+    url('https://rsms.me/inter/font-files/Inter-Medium.woff2?v=3.7')
+      format('woff');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://rsms.me/inter/font-files/Inter-SemiBold.woff2?v=3.7')
+      format('woff2'),
+    url('https://rsms.me/inter/font-files/Inter-SemiBold.woff2?v=3.7')
+      format('woff');
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.input {
+  @apply flex items-center my-px mr-2 text-xs rounded-sm border border-transparent select-none;
+}
+
+.input:hover {
+  @apply border-gray-300;
+}
+
+.input:focus-within {
+  @apply border-blue-500;
+  outline: 1px solid #18a0fb;
+  outline-offset: -2px;
+}
+
+.input:focus-within span {
+  @apply text-blue-500;
+}
+
+.btn {
+  @apply px-4 h-8 font-medium rounded text-xs border border-transparent;
+}
+
+.btn-primary {
+  @apply text-white bg-blue-500;
+}
+
+.btn:active,
+.btn:focus {
+  @apply outline-none;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  @apply border-blue-800;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
