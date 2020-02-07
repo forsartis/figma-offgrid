@@ -1,8 +1,8 @@
 <template>
-  <div class="font-inter text-gray-800">
+  <form class="m-0 font-inter text-gray-800">
     <div class="py-2">
       <div class="px-2 flex items-center">
-        <icon-input icon="rows" v-model="rows" />
+        <icon-input ref="rowInput" icon="rows" v-model="rows" />
         <icon-input icon="columns" v-model="columns" />
       </div>
       <div class="px-2 flex items-center">
@@ -18,7 +18,7 @@
       <button class="btn btn-primary" @click="createGrid">Create</button>
     </div>
     <app-icons />
-  </div>
+  </form>
 </template>
 
 <script>
@@ -39,6 +39,9 @@ export default {
       hOffset: 0,
       vOffset: 0,
     };
+  },
+  mounted() {
+    this.$refs.rowInput.$el.focus();
   },
   methods: {
     createGrid() {
