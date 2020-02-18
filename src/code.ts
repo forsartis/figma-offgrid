@@ -23,7 +23,7 @@ function createGrid(args) {
     return;
   }
   const copy: SceneNode = selection[0];
-  const startX = copy.x + copy.width * 1.5;
+  const startX = copy.type === 'COMPONENT' ? copy.x + copy.width * 1.5 : copy.x;
   const startY = copy.y;
   const nodes: SceneNode[] = [];
   for (let column = 0; column < args.columns; column++) {
@@ -38,6 +38,7 @@ function createGrid(args) {
       nodes.push(tile);
     }
   }
+  if (copy.type !== 'COMPONENT') copy.remove();
   figma.currentPage.selection = nodes;
   figma.viewport.scrollAndZoomIntoView(nodes);
 }
