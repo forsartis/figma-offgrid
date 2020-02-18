@@ -5,8 +5,10 @@
     </span>
     <input
       type="number"
+      :min="min"
       :value="value"
       @input="$emit('input', $event.target.value)"
+      @blur="$emit('blur')"
       class="w-12 h-7 bg-transparent focus:outline-none appearance-none"
     />
   </label>
@@ -20,6 +22,6 @@ export default {
     AppIcon,
   },
 
-  props: ['icon', 'value'],
+  props: ['icon', 'value', 'min'],
 };
 </script>
